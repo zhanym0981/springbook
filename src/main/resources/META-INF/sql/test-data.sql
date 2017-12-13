@@ -1,0 +1,12 @@
+insert into book (category_name, isbn, title, publisher, price) values ('Software', 1935794579, 'Intro to Java', 'Brandeis', 25.99);
+insert into book (category_name, isbn, title, publisher, price) values ('Software', 1974541179, 'Django Python', 'Bentley', 30.00);
+insert into book (category_name, isbn, title, publisher, price) values ('Art', 3045986943, 'Chinese Art', 'China Press', 10.99);
+insert into book (category_name, isbn, title, publisher, price) values ('Art', 3245864309, 'European Art', 'England Press', 15.99);
+insert into book (category_name, isbn, title, publisher, price) values ('Web Dev', 5367870249, 'Rails Framework', 'DHH', 97.32);
+insert into book (category_name, isbn, title, publisher, price) values ('Web Dev', 9072456073, 'Play with Scala', 'Play.org', 88.23);
+insert into book (category_name, isbn, title, publisher, price) values ('Web Dev', 4387054370, 'Rails Tutorial', 'Mike Hartl', 22.99);
+insert into book (category_name, isbn, title, publisher, price) values ('History', 0923754965, 'Asia History', 'Asia Press', 95.99);
+insert into book (category_name, isbn, title, publisher, price) values ('History', 2094724520, 'Korean History', 'Korea Press', 25.99);
+insert into book (category_name, isbn, title, publisher, price) values ('History', 9042652013, 'Peru History', 'Peru Press', 75.29);
+insert into book (category_name, isbn, title, publisher, price) values ('Sports', 9742502204, 'Sports Management', 'Emerson', 21.99);
+insert into book (category_name, isbn, title, publisher, price) values ('Sports', 8326529014, 'Life of Kobe', 'NBA', 45.99);
