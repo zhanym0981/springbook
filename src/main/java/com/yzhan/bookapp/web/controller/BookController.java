@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.Part;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Locale;
@@ -72,8 +71,7 @@ public class BookController {
     }
 
     @RequestMapping(params = "form", method = RequestMethod.POST)
-    public String create(@Valid Book book, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest,
-                         RedirectAttributes redirectAttributes, Locale locale, @RequestParam(value="file", required=false) Part file) {
+    public String create(@Valid Book book, BindingResult bindingResult, Model uiModel, RedirectAttributes redirectAttributes, Locale locale) {
         logger.info("Creating book");
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("message", new Message("error", messageSource.getMessage("book_save_fail", new Object[]{}, locale)));
@@ -109,8 +107,6 @@ public class BookController {
         if (orderBy != null && order != null) {
             sort = order.equals("desc") ? new Sort(Sort.Direction.DESC, orderBy) : new Sort(Sort.Direction.ASC, orderBy);
         }
-        // Constructs page request for current page
-        // Note: page number for Spring Data JPA starts with 0, while jqGrid starts with 1
         PageRequest pageRequest = sort == null ? new PageRequest(page - 1, rows) : new PageRequest(page - 1, rows, sort);
         Page<Book> bookPage = bookService.findAllByPage(pageRequest);
         BookGrid bookGrid = new BookGrid();
